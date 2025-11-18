@@ -1,0 +1,141 @@
+<section id="skills" class="py-20 bg-gray-50 text-gray-800">
+
+  <!-- Section Heading -->
+  <div class="container mx-auto px-6 text-center">
+    <h2 class="text-4xl font-semibold mb-3 inline-block pb-2 border-b-2 border-teal-500" data-aos="fade-up">
+      Skills
+    </h2>
+    <p class="text-gray-600 max-w-3xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="100">
+      A diverse skill set blending technical proficiency, creative design, and strategic leadership to drive impactful digital solutions.
+    </p>
+  </div>
+
+  <!-- Subtitle -->
+  <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="150">
+    <p class="text-lg text-gray-700">
+      Proficient in a wide range of tools and technologies to deliver exceptional results.
+    </p>
+  </div>
+
+  <div class="container mx-auto px-6 mt-14 grid grid-cols-1 lg:grid-cols-3 gap-10">
+
+    <!-- LEFT SIDE (MAIN SKILLS) -->
+    <div class="lg:col-span-2 space-y-16">
+      <!-- Category Block -->
+      <div data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-xl font-semibold text-gray-900">FRONT END</h3>
+        <p class="text-gray-500 mb-3">Core development and technical skills</p>
+        <hr class="border-gray-300 mb-6">
+
+        <!-- Skill Loop -->
+        <div class="space-y-6">
+          <ng-container *ngFor="let s of frontEnd">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium text-gray-800">{{ s.name }}</span>
+                <span class="font-medium text-gray-600">{{ s.value }}</span>
+              </div>
+
+              <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                <div class="bar h-2 bg-teal-500 rounded-full" [attr.data-width]="s.value"></div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Creative -->
+      <div data-aos="fade-up" data-aos-delay="250">
+        <h3 class="text-xl font-semibold text-gray-900">Creative Design</h3>
+        <p class="text-gray-500 mb-3">Visual and user experience design</p>
+        <hr class="border-gray-300 mb-6">
+
+        <div class="space-y-6">
+          <ng-container *ngFor="let s of backEnd">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium text-gray-800">{{ s.name }}</span>
+                <span class="font-medium text-gray-600">{{ s.value }}</span>
+              </div>
+
+              <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                <div class="bar h-2 bg-teal-500 rounded-full" [attr.data-width]="s.value"></div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <!-- Leadership -->
+      <div data-aos="fade-up" data-aos-delay="300">
+        <h3 class="text-xl font-semibold text-gray-900">Strategic Leadership</h3>
+        <p class="text-gray-500 mb-3">Management and business acumen</p>
+        <hr class="border-gray-300 mb-6">
+
+        <div class="space-y-6">
+          <ng-container *ngFor="let s of dataBase">
+            <div>
+              <div class="flex justify-between mb-2">
+                <span class="font-medium text-gray-800">{{ s.name }}</span>
+                <span class="font-medium text-gray-600">{{ s.value }}</span>
+              </div>
+
+              <div class="bg-gray-200 h-2 rounded-full overflow-hidden">
+                <div class="bar h-2 bg-teal-500 rounded-full" [attr.data-width]="s.value"></div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="space-y-10">
+
+      <!-- Experience -->
+      <div class="border border-gray-200 p-8 rounded-xl bg-white shadow-sm" data-aos="fade-up" data-aos-delay="350">
+        <div class="text-teal-500 text-5xl text-center">
+          <i class="bi bi-trophy"></i>
+        </div>
+
+        <h3 class="text-center text-xl mt-3 text-gray-900">Years of Experience</h3>
+
+        <div class="flex justify-center items-baseline gap-2 mt-3">
+          <span class="text-6xl font-bold text-teal-500">{{ years }}</span>
+          <span class="text-lg font-medium text-gray-700">Years</span>
+        </div>
+
+        <p class="text-center text-gray-600 mt-3">
+          Delivering consistent excellence in every project undertaken.
+        </p>
+      </div>
+
+      <!-- Technologies -->
+      <div class="border border-gray-200 p-8 rounded-xl bg-white shadow-sm" data-aos="fade-up" data-aos-delay="400">
+        <h4 class="text-lg font-semibold mb-5 text-gray-900">Primary Technologies</h4>
+
+        <div class="grid grid-cols-2 gap-4">
+          <span class="tech-badge text-gray-700 border border-gray-300 bg-gray-100" *ngFor="let t of techs">
+            {{ t }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <!-- <div class="border border-gray-200 p-8 rounded-xl bg-white shadow-sm" data-aos="fade-up" data-aos-delay="450">
+        <h4 class="text-lg font-semibold mb-4 text-gray-900">Recent Achievements</h4>
+
+        <div class="space-y-4">
+          <div *ngFor="let a of achievements" class="flex justify-between items-center p-3 bg-gray-100 rounded-lg">
+            <span class="text-gray-600">{{ a.year }}</span>
+            <span class="text-gray-800">{{ a.title }}</span>
+          </div>
+        </div>
+
+      </div> -->
+
+      
+    </div>
+  </div>
+</section>

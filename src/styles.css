@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Preloader */
+.preloader {
+  @apply fixed inset-0 bg-teal-500 flex items-center justify-center z-50;
+}
+.spinner {
+  @apply h-16 w-16 border-4 border-white border-t-transparent rounded-full animate-spin;
+}
+
+
+.progress-bar-color {
+  background-color: #22e7a1 !important;
+}
+
+
+/* custom utilities */
+@layer components {
+  .tech-badge {
+    @apply px-3 py-2 rounded-lg text-sm font-medium text-teal-100 border border-teal-500/30 bg-teal-400/5 text-center;
+  }
+
+  /* responsive container tweak — optional */
+  .container {
+    @apply mx-auto;
+    max-width: 1200px;
+  }
+}

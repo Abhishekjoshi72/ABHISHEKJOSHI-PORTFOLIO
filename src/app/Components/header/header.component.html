@@ -1,0 +1,83 @@
+<header id="header"
+  class="bg-gray-900 text-white flex flex-col justify-between xl:fixed xl:w-64 xl:h-screen p-6 shadow-xl shadow-black/40
+         transition-all duration-500 ease-in-out z-50 animate__animated animate__fadeInLeft backdrop-blur-xl bg-opacity-80">
+
+  <!-- Mobile Toggle -->
+  <button class="xl:hidden text-white text-3xl mb-4 self-end focus:outline-none hover:text-teal-400 transition"
+    (click)="toggleMenu()" data-aos="fade-down">
+    <i class="bi" [ngClass]="isMenuOpen ? 'bi-x' : 'bi-list'"></i>
+  </button>
+
+  <!-- Profile Section -->
+  <div class="flex flex-col items-center space-y-3" data-aos="fade-up">
+
+    <div
+      class="w-28 h-28 rounded-full overflow-hidden border-4 border-teal-400 shadow-[0_0_20px_rgba(20,184,166,0.7)]
+             hover:scale-110 transition-all duration-500 bg-white/10 backdrop-blur-xl">
+      <img src="../../assets/Profile/ABHISHEKJOSHI.jpg" alt="Profile" class="w-full h-full object-cover" />
+    </div>
+
+    <span
+      class="text-2xl font-semibold hover:text-teal-400 transition duration-300 tracking-wide drop-shadow-lg cursor-pointer"
+      (click)="scrollToSection('home')">
+      Abhishek Joshi
+    </span>
+  </div>
+
+  <!-- Navigation -->
+  <nav id="navmenu" class="mt-10 transition-all duration-500"
+    [ngClass]="{ 'hidden': !isMenuOpen && isMobile, 'block': isMenuOpen || !isMobile }">
+
+    <ul class="flex flex-col items-center xl:items-start space-y-5 text-lg">
+
+      <li *ngFor="let item of navItems" data-aos="fade-left" [attr.data-aos-delay]="item.delay" class="w-full">
+        <a href="javascript:void(0)"
+          (click)="scrollToSection(item.link)"
+          class="flex items-center gap-3 hover:text-teal-400 transition-all duration-300
+                 px-3 py-2 rounded-lg hover:bg-gray-800/60 w-full hover:translate-x-2
+                 hover:shadow-[0_0_15px_rgba(20,184,166,0.4)]">
+          <i class="{{ item.icon }}"></i>
+          <span>{{ item.label }}</span>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- Social Links -->
+  <div class="flex items-center justify-center gap-6 mb-8" data-aos="fade-up" data-aos-delay="150">
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/917276414840" target="_blank" rel="noopener noreferrer" class="group">
+      <div class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 text-gray-500
+                  transition duration-300 shadow-sm
+                  group-hover:border-teal-500 group-hover:text-teal-500
+                  group-hover:animate-glow animate-float">
+        <i class="bi bi-whatsapp text-xl"></i>
+      </div>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:abhishek.s.joshi7276@gmail.com?subject=Hello Abhishek&body=I visited your portfolio."
+       class="group">
+      <div class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 text-gray-500
+                  transition duration-300 shadow-sm
+                  group-hover:border-blue-400 group-hover:text-blue-400
+                  group-hover:animate-glow animate-float">
+        <i class="bi bi-envelope text-xl"></i>
+      </div>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/abhishek-joshi-5064b7109/" target="_blank" rel="noopener noreferrer" class="group">
+      <div class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 text-gray-500
+                  transition duration-300 shadow-sm
+                  group-hover:border-blue-500 group-hover:text-blue-500
+                  group-hover:animate-glow animate-float">
+        <i class="bi bi-linkedin text-xl"></i>
+      </div>
+    </a>
+
+  </div>
+
+</header>

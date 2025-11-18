@@ -1,0 +1,16 @@
+/* Use this file only for a couple of helper rules not easy to express inline.
+   Most styling is Tailwind utilities in the template. */
+
+/* Smooth width transition for bars */
+.bar {
+  width: 0;
+  transition: width 1.4s cubic-bezier(.2,.9,.2,1);
+}
+
+/* If you want an initial subtle glow */
+.bar::after {
+  content: '';
+  position: absolute;
+}
+
+/* Make sure parent containers maintain stacking context for bar gradient */
