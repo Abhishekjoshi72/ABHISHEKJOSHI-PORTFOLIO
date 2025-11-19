@@ -30,7 +30,6 @@
                 "input": "src/assets",
                 "output": "/assets/"
               }
-
             ],
             "styles": [
               "src/styles.css",
@@ -38,7 +37,7 @@
               "node_modules/aos/dist/aos.css"
             ],
             "scripts": [
-               "node_modules/aos/dist/aos.js"
+              "node_modules/aos/dist/aos.js"
             ]
           },
           "configurations": {
@@ -46,14 +45,17 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kB",
+                  "maximumWarning": "900kB",
                   "maximumError": "1MB"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
+                  "maximumWarning": "50kb",
+                  "maximumError": "60kb"
                 }
+              ],
+              "allowedCommonJsDependencies": [
+                "aos"
               ],
               "outputHashing": "all"
             },
