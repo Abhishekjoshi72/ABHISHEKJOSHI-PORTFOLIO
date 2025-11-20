@@ -8,12 +8,24 @@
     <i class="bi" [ngClass]="isMenuOpen ? 'bi-x' : 'bi-list'"></i>
   </button>
 
+  <!-- ⭐ NEW LOGO SECTION -->
+  <div class="flex flex-col items-center mb-6" data-aos="fade-down" (click)="scrollToSection('home')">
+    <div
+      class="w-20 h-20 rounded-2xl overflow-hidden bg-white/10 border border-teal-500 shadow-[0_0_18px_rgba(20,184,166,0.5)] p-2
+             hover:scale-110 transition-all duration-500 backdrop-blur-md cursor-pointer">
+      <img src="../../../assets/Logo/abhishekjoshi-logo.png"
+           alt="AJ Logo"
+           class="w-full h-full object-contain" />
+    </div>
+  </div>
+  <!-- ⭐ END LOGO SECTION -->
+
   <!-- Profile Section -->
-  <div class="flex flex-col items-center space-y-3" data-aos="fade-up">
+  <div class="flex flex-col items-center space-y-3" data-aos="fade-up" (click)="scrollToSection('home')">
 
     <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-teal-400 shadow-[0_0_20px_rgba(20,184,166,0.7)]
              hover:scale-110 transition-all duration-500 bg-white/10 backdrop-blur-xl">
-      <img src="../../assets/Profile/ABHISHEKJOSHI.jpg" alt="Profile" class="w-full h-full object-cover" />
+      <img src="../../../assets/Profile/abhishekjoshi-1.jpg" alt="Profile" class="w-full object-cover" />
     </div>
 
     <span
@@ -21,6 +33,7 @@
       (click)="scrollToSection('home')">
       Abhishek Joshi
     </span>
+
     <div class="overflow-hidden whitespace-nowrap marging-top-4">
       <span class="text-sm text-gray-400 inline-block animate-[marquee_6s_linear_infinite]">
         Full Stack Developer
