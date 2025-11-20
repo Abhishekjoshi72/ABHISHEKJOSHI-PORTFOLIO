@@ -8,141 +8,60 @@
     </p>
   </div>
 
+  <!-- Services Grid -->
   <div class="container mx-auto px-4 grid md:grid-cols-2 gap-10">
 
-    <!-- SERVICE 1 -->
-    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-        data-aos="fade-right" data-aos-delay="200">
-
+    <!-- SERVICE CARD -->
+    <div
+      *ngFor="let srv of services"
+      class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
+      data-aos="fade-up"
+      (click)="openModal(srv)"
+    >
       <div class="flex items-start gap-6">
-        <div class="text-5xl text-blue-600">
-          <i class="bi bi-palette"></i>
+        <div class="text-5xl" [ngClass]="srv.iconColor">
+          <i class="bi" [ngClass]="srv.icon"></i>
         </div>
 
         <div>
-          <h3 class="text-2xl font-semibold mb-2">Brand Identity Design</h3>
-          <p class="text-gray-600 mb-3">
-            Crafting distinctive visual identities that capture your brand's essence.
-          </p>
+          <h3 class="text-2xl font-semibold mb-2">{{ srv.title }}</h3>
+          <p class="text-gray-600 mb-3">{{ srv.short }}</p>
 
-          <!-- Learn More Button -->
-          <button
-            class="flex items-center text-blue-600 hover:underline gap-1 cursor-pointer"
-            (click)="toggle(1)">
-            <span>{{ openId === 1 ? 'Show Less' : 'Learn More' }}</span>
-            <i class="bi" [ngClass]="openId === 1 ? 'bi-chevron-up' : 'bi-arrow-right'"></i>
+          <button class="flex items-center hover:underline gap-1 text-blue-600">
+            <span>Learn More</span>
+            <i class="bi bi-arrow-right"></i>
           </button>
         </div>
       </div>
-
-      <!-- EXPANDED CONTENT -->
-      <div *ngIf="openId === 1"
-        class="mt-4 text-gray-600 border-t pt-4 animate__animated animate__fadeIn">
-
-        A complete branding package including logo design, typography systems, color guidelines,
-        brand voice, and consistent visual identity that enhances your business presence across all platforms.
-
-      </div>
     </div>
-
-    <!-- SERVICE 2 -->
-    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-        data-aos="fade-left" data-aos-delay="250">
-
-      <div class="flex items-start gap-6">
-        <div class="text-5xl text-purple-600">
-          <i class="bi bi-code-slash"></i>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold mb-2">Web Development</h3>
-          <p class="text-gray-600 mb-3">
-            Modern, responsive websites built with clean UI & exceptional UX.
-          </p>
-
-          <button
-            class="flex items-center text-purple-600 hover:underline gap-1 cursor-pointer"
-            (click)="toggle(2)">
-            <span>{{ openId === 2 ? 'Show Less' : 'Learn More' }}</span>
-            <i class="bi" [ngClass]="openId === 2 ? 'bi-chevron-up' : 'bi-arrow-right'"></i>
-          </button>
-        </div>
-      </div>
-
-      <div *ngIf="openId === 2"
-        class="mt-4 text-gray-600 border-t pt-4 animate__animated animate__fadeIn">
-
-        I build fully responsive websites and web apps using Angular, Node.js, Tailwind, REST APIs,
-        and optimized performance techniques ensuring smooth user interactions.
-
-      </div>
-    </div>
-
-    <!-- SERVICE 3 -->
-    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-        data-aos="fade-right" data-aos-delay="300">
-
-      <div class="flex items-start gap-6">
-        <div class="text-5xl text-green-600">
-          <i class="bi bi-phone"></i>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold mb-2">UI/UX Design</h3>
-          <p class="text-gray-600 mb-3">
-            Intuitive and premium interface design for digital products.
-          </p>
-
-          <button
-            class="flex items-center text-green-600 hover:underline gap-1 cursor-pointer"
-            (click)="toggle(3)">
-            <span>{{ openId === 3 ? 'Show Less' : 'Learn More' }}</span>
-            <i class="bi" [ngClass]="openId === 3 ? 'bi-chevron-up' : 'bi-arrow-right'"></i>
-          </button>
-        </div>
-      </div>
-
-      <div *ngIf="openId === 3"
-        class="mt-4 text-gray-600 border-t pt-4 animate__animated animate__fadeIn">
-
-        A blend of visual aesthetics and human-centered design principles to ensure meaningful,
-        seamless, and beautiful experiences for users across all devices.
-
-      </div>
-    </div>
-
-    <!-- SERVICE 4 -->
-    <div class="p-6 bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
-        data-aos="fade-left" data-aos-delay="350">
-
-      <div class="flex items-start gap-6">
-        <div class="text-5xl text-red-600">
-          <i class="bi bi-megaphone"></i>
-        </div>
-
-        <div>
-          <h3 class="text-2xl font-semibold mb-2">Digital Strategy</h3>
-          <p class="text-gray-600 mb-3">
-            Helping brands grow with data-driven digital solutions.
-          </p>
-
-          <button
-            class="flex items-center text-red-600 hover:underline gap-1 cursor-pointer"
-            (click)="toggle(4)">
-            <span>{{ openId === 4 ? 'Show Less' : 'Learn More' }}</span>
-            <i class="bi" [ngClass]="openId === 4 ? 'bi-chevron-up' : 'bi-arrow-right'"></i>
-          </button>
-        </div>
-      </div>
-
-      <div *ngIf="openId === 4"
-        class="mt-4 text-gray-600 border-t pt-4 animate__animated animate__fadeIn">
-
-        From SEO to content strategy, social media planning, and digital branding — I create
-        powerful strategies that increase engagement and drive conversions.
-
-      </div>
-    </div>
-
   </div>
+
+  <!-- MODAL POPUP -->
+  <div
+    *ngIf="selectedService"
+    class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 animate__animated animate__fadeIn"
+    (click)="closeModal()"
+  >
+    <div
+      class="bg-white max-w-3xl w-full rounded-xl shadow-xl p-6 relative animate__animated animate__zoomIn"
+      (click)="$event.stopPropagation()"
+    >
+      <!-- Close Button -->
+      <button
+        class="absolute top-4 right-4 text-gray-500 hover:text-black text-2xl"
+        (click)="closeModal()"
+      >
+        <i class="bi bi-x-lg"></i>
+      </button>
+
+      <h3 class="text-3xl font-bold mb-4">{{ selectedService.title }}</h3>
+
+      <p class="text-gray-700 mb-4">{{ selectedService.long }}</p>
+
+      <ul class="list-disc pl-6 space-y-2 text-gray-700">
+        <li *ngFor="let item of selectedService.points">{{ item }}</li>
+      </ul>
+    </div>
+  </div>
+
 </section>

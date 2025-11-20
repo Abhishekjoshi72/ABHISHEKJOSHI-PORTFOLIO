@@ -11,8 +11,7 @@
   <!-- Profile Section -->
   <div class="flex flex-col items-center space-y-3" data-aos="fade-up">
 
-    <div
-      class="w-28 h-28 rounded-full overflow-hidden border-4 border-teal-400 shadow-[0_0_20px_rgba(20,184,166,0.7)]
+    <div class="w-28 h-28 rounded-full overflow-hidden border-4 border-teal-400 shadow-[0_0_20px_rgba(20,184,166,0.7)]
              hover:scale-110 transition-all duration-500 bg-white/10 backdrop-blur-xl">
       <img src="../../assets/Profile/ABHISHEKJOSHI.jpg" alt="Profile" class="w-full h-full object-cover" />
     </div>
@@ -22,6 +21,11 @@
       (click)="scrollToSection('home')">
       Abhishek Joshi
     </span>
+    <div class="overflow-hidden whitespace-nowrap marging-top-4">
+      <span class="text-sm text-gray-400 inline-block animate-[marquee_6s_linear_infinite]">
+        Full Stack Developer
+      </span>
+    </div>
   </div>
 
   <!-- Navigation -->
@@ -31,9 +35,7 @@
     <ul class="flex flex-col items-center xl:items-start space-y-5 text-lg">
 
       <li *ngFor="let item of navItems" data-aos="fade-left" [attr.data-aos-delay]="item.delay" class="w-full">
-        <a href="javascript:void(0)"
-          (click)="scrollToSection(item.link)"
-          class="flex items-center gap-3 hover:text-teal-400 transition-all duration-300
+        <a href="javascript:void(0)" (click)="scrollToSection(item.link)" class="flex items-center gap-3 hover:text-teal-400 transition-all duration-300
                  px-3 py-2 rounded-lg hover:bg-gray-800/60 w-full hover:translate-x-2
                  hover:shadow-[0_0_15px_rgba(20,184,166,0.4)]">
           <i class="{{ item.icon }}"></i>
@@ -58,8 +60,7 @@
     </a>
 
     <!-- Email -->
-    <a href="mailto:abhishek.s.joshi7276@gmail.com?subject=Hello Abhishek&body=I visited your portfolio."
-       class="group">
+    <a href="mailto:abhishek.s.joshi7276@gmail.com?subject=Hello Abhishek&body=I visited your portfolio." class="group">
       <div class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 text-gray-500
                   transition duration-300 shadow-sm
                   group-hover:border-blue-400 group-hover:text-blue-400
@@ -69,7 +70,8 @@
     </a>
 
     <!-- LinkedIn -->
-    <a href="https://www.linkedin.com/in/abhishek-joshi-5064b7109/" target="_blank" rel="noopener noreferrer" class="group">
+    <a href="https://www.linkedin.com/in/abhishek-joshi-5064b7109/" target="_blank" rel="noopener noreferrer"
+      class="group">
       <div class="w-9 h-9 flex items-center justify-center rounded-full border border-gray-400 text-gray-500
                   transition duration-300 shadow-sm
                   group-hover:border-blue-500 group-hover:text-blue-500

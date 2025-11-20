@@ -12,9 +12,10 @@
 
       <!-- Left -->
       <div class="lg:col-span-5 space-y-6" data-aos="fade-right">
-        
+
         <!-- Card 1 -->
-        <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
+        <div
+          class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
           <div class="p-3 bg-blue-100 text-blue-600 rounded-full text-2xl">
             <i class="bi bi-chat-dots"></i>
           </div>
@@ -30,7 +31,8 @@
         <div class="space-y-4">
 
           <!-- Email -->
-          <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
+          <div
+            class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
             <div class="p-3 bg-pink-100 text-pink-600 rounded-full text-xl">
               <i class="bi bi-envelope-open"></i>
             </div>
@@ -41,7 +43,8 @@
           </div>
 
           <!-- Phone -->
-          <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
+          <div
+            class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
             <div class="p-3 bg-green-100 text-green-600 rounded-full text-xl">
               <i class="bi bi-telephone-outbound"></i>
             </div>
@@ -52,7 +55,8 @@
           </div>
 
           <!-- Location -->
-          <div class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
+          <div
+            class="flex items-start gap-4 p-5 bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition hover:-translate-y-1">
             <div class="p-3 bg-yellow-100 text-yellow-600 rounded-full text-xl">
               <i class="bi bi-geo-alt-fill"></i>
             </div>
@@ -67,7 +71,8 @@
 
       <!-- Form -->
       <div class="lg:col-span-7" data-aos="fade-left">
-        <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition hover:-translate-y-1">
+        <div
+          class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-2xl transition hover:-translate-y-1">
 
           <h3 class="text-2xl font-semibold mb-6 text-gray-800 dark:text-white">
             Send Me a Message
@@ -76,17 +81,13 @@
           <form [formGroup]="contactForm" (ngSubmit)="sendEmail()" class="space-y-5">
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              
+
               <!-- Name -->
               <div>
                 <label class="text-gray-700 dark:text-gray-300 font-medium">Full Name</label>
-                <input
-                  formControlName="name"
-                  type="text"
-                  class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300"
-                />
-                <p *ngIf="f['name'].touched && f['name'].invalid"
-                   class="text-red-500 text-sm mt-1">
+                <input formControlName="name" type="text"
+                  class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300" />
+                <p *ngIf="f['name'].touched && f['name'].invalid" class="text-red-500 text-sm mt-1">
                   Name is required (min 3 characters)
                 </p>
               </div>
@@ -94,13 +95,9 @@
               <!-- Email -->
               <div>
                 <label class="text-gray-700 dark:text-gray-300 font-medium">Email Address</label>
-                <input
-                  formControlName="email"
-                  type="email"
-                  class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300"
-                />
-                <p *ngIf="f['email'].touched && f['email'].invalid"
-                   class="text-red-500 text-sm mt-1">
+                <input formControlName="email" type="email"
+                  class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300" />
+                <p *ngIf="f['email'].touched && f['email'].invalid" class="text-red-500 text-sm mt-1">
                   Enter a valid email
                 </p>
               </div>
@@ -110,13 +107,9 @@
             <!-- Subject -->
             <div>
               <label class="text-gray-700 dark:text-gray-300 font-medium">Subject</label>
-              <input
-                formControlName="subject"
-                type="text"
-                class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300"
-              />
-              <p *ngIf="f['subject'].touched && f['subject'].invalid"
-                 class="text-red-500 text-sm mt-1">
+              <input formControlName="subject" type="text"
+                class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300" />
+              <p *ngIf="f['subject'].touched && f['subject'].invalid" class="text-red-500 text-sm mt-1">
                 Subject is required
               </p>
             </div>
@@ -124,23 +117,16 @@
             <!-- Message -->
             <div>
               <label class="text-gray-700 dark:text-gray-300 font-medium">Message</label>
-              <textarea
-                formControlName="message"
-                rows="5"
-                class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300"
-              ></textarea>
-              <p *ngIf="f['message'].touched && f['message'].invalid"
-                 class="text-red-500 text-sm mt-1">
+              <textarea formControlName="message" rows="5"
+                class="w-full mt-1 px-4 py-3 border rounded-lg dark:bg-gray-700 dark:text-white focus:ring focus:ring-blue-300"></textarea>
+              <p *ngIf="f['message'].touched && f['message'].invalid" class="text-red-500 text-sm mt-1">
                 Message must be at least 10 characters
               </p>
             </div>
 
             <!-- Button -->
-            <button
-              type="submit"
-              [disabled]="isSubmitting"
-              class="w-full md:w-auto flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition"
-            >
+            <button type="submit" [disabled]="contactForm.disabled"
+              class="w-full md:w-auto flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-xl font-medium hover:bg-blue-700 transition">
               <span *ngIf="!isSubmitting">Send Message</span>
               <span *ngIf="isSubmitting">Sending...</span>
               <i class="bi bi-send"></i>
